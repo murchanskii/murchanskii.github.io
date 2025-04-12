@@ -140,6 +140,7 @@
   </div>
   <script>
   window.gameReady && window.gameReady();
+  addEventListener("selectstart", event => event.preventDefault());
   const container = document.getElementById("container");
   const video = document.getElementById("loopVideo");
   const audio = document.getElementById("audio");
