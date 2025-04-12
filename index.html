@@ -140,12 +140,6 @@
   </div>
   <script>
   window.gameReady && window.gameReady();
-  addEventListener("touchstart", (event) => {
-    event.preventDefault();
-    tryToUnmute();if(isClickCount){tryToRedirect();}
-  });
-  addEventListener("touchend", event => event.preventDefault());
-  addEventListener("touchmove", event => event.preventDefault());
   const container = document.getElementById("container");
   const video = document.getElementById("loopVideo");
   const audio = document.getElementById("audio");
@@ -155,6 +149,9 @@
   const downloadBtnImage = document.getElementById("CtaDownload");
   const loadingBack = document.getElementById("LoadingBack");
   const loadingLogo = document.getElementById("LoadingLogo");
+
+  video.addEventListener('contetxmenu', function(e) { e.preventDefault(); return false; }, false);
+
   loadingLogo.src = logo.src;
   let cTweenCenter;
   let cTweenHand;
